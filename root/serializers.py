@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Organization, Project
+from .models import Organization, Project, RelOrgToUserModel, RelProjectToUserModel
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
@@ -11,4 +11,14 @@ class OrganizationSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
+        fields = "__all__"
+
+class RelOrgToUserModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RelOrgToUserModel
+        fields = "__all__"
+
+class RelProjectToUserModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RelProjectToUserModel
         fields = "__all__"
